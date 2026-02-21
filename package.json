@@ -7,7 +7,8 @@
     "build": "remix build",
     "dev": "remix dev --manual -c \"npm run start\"",
     "start": "wrangler pages dev --local ./public",
-    "deploy": "npm run build && wrangler pages deploy ./public"
+    "deploy": "npm run build && wrangler pages deploy ./public",
+    "build:ci": "npm run build && npx wrangler d1 execute zhen-gao-cang-db --file=./app/db/schema.sql"
   },
   "dependencies": {
     "@remix-run/cloudflare": "^1.19.0",
