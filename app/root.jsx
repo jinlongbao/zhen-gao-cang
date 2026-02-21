@@ -22,7 +22,6 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <h1 style={{ fontSize: '72px', color: 'blue' }}>THIS IS A TEST</h1>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
