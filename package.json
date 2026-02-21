@@ -1,19 +1,18 @@
 {
-  "name": "zhen-gao-cang",
+  "name": "zhen-gao-cang-v2",
   "private": true,
   "sideEffects": false,
   "type": "module",
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev --manual",
-    "start": "remix-serve build",
+    "dev": "remix dev --manual -c \"npm run start\"",
+    "start": "wrangler pages dev --local ./public",
     "deploy": "npm run build && wrangler pages deploy ./public"
   },
   "dependencies": {
-    "@remix-run/node": "^1.19.0",
-    "@remix-run/react": "^1.19.0",
     "@remix-run/cloudflare": "^1.19.0",
-    "@remix-run/serve": "^1.19.0",
+    "@remix-run/cloudflare-pages": "^1.19.0",
+    "@remix-run/react": "^1.19.0",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -21,7 +20,8 @@
   "devDependencies": {
     "@remix-run/dev": "^1.19.0",
     "@cloudflare/workers-types": "^3.19.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "wrangler": "^3.0.0"
   },
   "engines": {
     "node": ">=16.13.0"
