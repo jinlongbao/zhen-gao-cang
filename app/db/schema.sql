@@ -1,14 +1,14 @@
 -- 用户角色表
-CREATE TABLE roles (
+CREATE TABLE IF NOT EXISTS roles (
   id INTEGER PRIMARY KEY,
   name TEXT NOT NULL UNIQUE
 );
 
--- 初始化角色
-INSERT INTO roles (name) VALUES ('buyer'), ('creator'), ('admin');
+-- 初始化角色 (忽略已存在)
+INSERT OR IGNORE INTO roles (name) VALUES ('buyer'), ('creator'), ('admin');
 
 -- 用户表
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   username TEXT NOT NULL UNIQUE,
   password_hash TEXT NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE users (
 );
 
 -- 图解表
-CREATE TABLE patterns (
+CREATE TABLE IF NOT EXISTS patterns (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   creator_id INTEGER NOT NULL,
   title TEXT NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE patterns (
 );
 
 -- 授权表
-CREATE TABLE authorizations (
+CREATE TABLE IF NOT EXISTS authorizations (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   pattern_id INTEGER NOT NULL,
   buyer_id INTEGER NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE authorizations (
 );
 
 -- 黑名单表
-CREATE TABLE blacklist (
+CREATE TABLE IF NOT EXISTS blacklist (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   reported_user_id INTEGER NOT NULL,
   reporter_id INTEGER NOT NULL, -- 举报人，必须是原创织女
