@@ -1,4 +1,4 @@
-import { json } from "@remix-run/node";
+import { json } from "@remix-run/cloudflare";
 import { createUser } from "~/lib/db"; // Assuming db functions are in lib
 
 export async function action({ request, context }) {

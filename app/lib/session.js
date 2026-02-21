@@ -1,4 +1,4 @@
-import { createCookieSessionStorage, redirect } from "@remix-run/node";
+import { createCookieSessionStorage, redirect } from "@remix-run/cloudflare";
 
 // This should be a secret in your environment variables
 const sessionSecret = process.env.SESSION_SECRET || "SUPER_SECRET_DEV_STRING";

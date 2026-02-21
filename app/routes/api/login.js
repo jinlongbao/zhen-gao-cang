@@ -1,4 +1,4 @@
-import { json } from "@remix-run/node";
+import { json } from "@remix-run/cloudflare";
 import { getUserByUsername } from "~/lib/db"; // Assuming db functions are in lib
 import { createSession } from "~/lib/session"; // Assuming session functions are in lib
 
