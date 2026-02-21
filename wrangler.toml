@@ -1,0 +1,9 @@
+name = "zhen-gao-cang"
+main = "./server.js" # Tên file server của bạn
+compatibility_date = "2023-10-30"
+
+[[d1_databases]]
+binding = "DB" # this is the binding name you use in your code
+preview_database_id = "c9d03e42-4630-4530-8bb4-f461172980ae"
+database_id = "c9d03e42-4630-4530-8bb4-f461172980ae"
+database_name = "zhen-gao-cang-db"
