@@ -1,17 +1,29 @@
 {
   "name": "zhen-gao-cang",
-  "version": "1.0.0",
-  "description": "一个为原创织女设计的图解保护和分发平台。",
-  "main": "src/index.js",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "remix build",
+    "dev": "remix dev --manual",
+    "start": "remix-serve build",
+    "deploy": "npm run build && wrangler pages deploy ./public"
   },
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "express": "^4.17.1"
+    "@remix-run/node": "^1.19.0",
+    "@remix-run/react": "^1.19.0",
+    "@remix-run/cloudflare": "^1.19.0",
+    "@remix-run/serve": "^1.19.0",
+    "isbot": "^3.6.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "@remix-run/dev": "^1.19.0",
+    "@cloudflare/workers-types": "^4.20230419.0",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=16.13.0"
+  }
 }
